@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var width = 100; //update,redefine,functionscope or global scope if there is no function
+        let height = 200;//update,redefine,blockScope {}
+        const key = 'abc123';//update,blockScope {}
+        const person = {
+            name:'wes',
+            age:30
+        }// you can change values but cant redefine 'person'
+        const wes = Object.freeze(person); // will create immutable object
+    ////Imidietly envoked function expression
+        var name = "wes"; //now wariable availsble in global scope
+        //if we create variable inside the unnamed function it would never leak ti the global scope
+        (function(){
+            var name = "wes";
+        })()
+    ////For loop problem
+        // for(var i = 0; i<10; ++i){
+        //     console.log(i); //return rows from 1 til 9
+        //     setTimeout(function(){
+        //         console.log('The number is ' + i); // returns 10
+        //     },1000);
+        // }
+        // for(let i = 0; i<10; ++i){
+        //     console.log(i); //return rows from 1 til 9
+        //     setTimeout(function(){
+        //         console.log('The number is ' + i); // returns 10
+        //     },1000);
+        // }
+    ////Temporal Dead Zone
+        //You cannot use variable let const before you use it
+    ////Arrow function
+        //Arrow functions hase implicit return
+
+    </script>
+</body>
+</html>
